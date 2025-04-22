@@ -16,81 +16,84 @@ const Header = () => {
     { id: "partners", label: "Partners" },
   ];
 
+  const isHomePage = location.pathname === "/";
+
   return (
-    <header id="home" className="mx-2 mb-5 fixed top-0 left-0 w-full bg-cyan-800 shadow-md z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4 relative">
-        {/* Logo */}
-        <RouterLink to="/">
-          <img src={Logo} alt="Logo" className="logo w-32 sm:w-40" />
-        </RouterLink>
+    <header className=" w-full fixed top-0 left-0 w-auto bg-cyan-800 shadow-md z-50  rounded-t-2xl">
+  <div className="max-w-screen-lg mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
+    {/* Logo */}
+    <RouterLink to="/">
+      <img src={Logo} alt="Logo" className="logo w-32 sm:w-40" />
+    </RouterLink>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-4 lg:space-x-6">
-          {navItems.map((item) =>
-            location.pathname === "/" ? (
-              <ScrollLink
-                key={item.id}
-                to={item.id}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className="text-sm lg:text-base text-gray-700 dark:text-gray-200 hover:text-blue-500 cursor-pointer transition-colors"
-              >
-                {item.label}
-              </ScrollLink>
-            ) : (
-              <RouterLink
-                key={item.id}
-                to={`/#${item.id}`}
-                className="text-sm lg:text-base text-gray-700 dark:text-gray-200 hover:text-blue-500 transition-colors"
-              >
-                {item.label}
-              </RouterLink>
-            )
-          )}
-        </nav>
-
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-md bg-cyan-700 text-gray-900 hover:bg-cyan-200 shadow-sm transition"
+    {/* Desktop Nav */}
+    <nav className="hidden md:flex space-x-4 lg:space-x-6">
+      {navItems.map((item) =>
+        isHomePage ? (
+          <ScrollLink
+            key={item.id}
+            to={item.id}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="text-sm lg:text-base text-gray-100 hover:text-blue-300 cursor-pointer transition-colors"
           >
-            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-cyan-700 px-4 py-4 border-t border-cyan-900 space-y-4 transition-all duration-300 ease-in-out">
-          {navItems.map((item) =>
-            location.pathname === "/" ? (
-              <ScrollLink
-                key={item.id}
-                to={item.id}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                onClick={() => setIsMenuOpen(false)}
-                className="block text-gray-700 dark:text-gray-200 hover:text-blue-500 transition-colors"
-              >
-                {item.label}
-              </ScrollLink>
-            ) : (
-              <RouterLink
-                key={item.id}
-                to={`/#${item.id}`}
-                onClick={() => setIsMenuOpen(false)}
-                className="block text-gray-700 dark:text-gray-200 hover:text-blue-500 transition-colors"
-              >
-                {item.label}
-              </RouterLink>
-            )
-          )}
-        </div>
+            {item.label}
+          </ScrollLink>
+        ) : (
+          <RouterLink
+            key={item.id}
+            to={`/#${item.id}`}
+            className="text-sm lg:text-base text-gray-100 hover:text-blue-300 transition-colors"
+          >
+            {item.label}
+          </RouterLink>
+        )
       )}
-    </header>
+    </nav>
+
+    {/* Mobile Toggle */}
+    <div className="md:hidden">
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="p-2 rounded-md bg-cyan-700 text-white hover:bg-cyan-600 shadow-sm transition"
+      >
+        {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      </button>
+    </div>
+  </div>
+
+  {/* Mobile Nav */}
+  {isMenuOpen && (
+    <div className="md:hidden bg-cyan-700 px-4 py-4 border-t border-cyan-900 space-y-4">
+      {navItems.map((item) =>
+        isHomePage ? (
+          <ScrollLink
+            key={item.id}
+            to={item.id}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            onClick={() => setIsMenuOpen(false)}
+            className="block text-gray-100 hover:text-blue-300 transition-colors"
+          >
+            {item.label}
+          </ScrollLink>
+        ) : (
+          <RouterLink
+            key={item.id}
+            to={`/#${item.id}`}
+            onClick={() => setIsMenuOpen(false)}
+            className="block text-gray-100 hover:text-blue-300 transition-colors"
+          >
+            {item.label}
+          </RouterLink>
+        )
+      )}
+    </div>
+  )}
+</header>
+
   );
 };
 

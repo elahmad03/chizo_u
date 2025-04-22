@@ -24,7 +24,7 @@ function Home() {
   }, [location]);
 
   return (
-    <>
+    <div className='max-w-7xl mx-auto'>
       {/* showcase section */}
       <section>
         <Showcase />
@@ -52,7 +52,7 @@ function Home() {
         <Partners />
       </section>
       
-    </>
+    </div>
   );
 }
 

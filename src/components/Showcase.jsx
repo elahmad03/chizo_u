@@ -5,14 +5,14 @@ const Showcase = () => {
   return (
     <section
       bg-white
-      className="mt-20"
+      className="mt-32"
       style={{
         backgroundColor: "white",
         backgroundImage: `url('/img/banner.png')`,
-        backgroundSize: 'contain',  // Default background size for desktop
+        backgroundSize: 'cover',  // Default background size for desktop
         backgroundRepeat: "no-repeat",
         backgroundPosition: 'center',
-        height: '80vh',
+        height: '70vh',
         width: '100%',
         position: 'relative',
       }}

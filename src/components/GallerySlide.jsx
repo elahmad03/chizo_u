@@ -38,7 +38,7 @@ export default function GallerySlider() {
       >
         {galleryItems.map((item, i) => (
           <SwiperSlide key={i}>
-            <div className="relative w-full h-[300px] md:h-[400px] bg-gray-200">
+            <div className="relative w-full h-[300px] md:h-[500px] bg-gray-200">
               <img
                 src={item.src}
                 alt=""

@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import chizoImg from "/img/chizo2.jpg";
-import adamuImg from "/img/adamu.jpg";
-import isaImg from "/img/isa.jpg";
+import isaImg from "/img/adamu.jpg";
+import adamuImg from "/img/isa.jpg";
 
 const team = [
   {
@@ -12,15 +12,15 @@ const team = [
     description: "Visionary entrepreneur with a passion for innovation and leadership.",
   },
   {
-    name: "Adamy hamisu",
+    name: "Adamu hamisu",
     role: "Chairman",
-    image: adamuImg,
+    image: isaImg,
     description: "Experienced leader dedicated to strategic development and growth.",
   },
   {
     name: "Isa Muhammad",
     role: "Secretary",
-    image: isaImg,
+    image: adamuImg,
     description: "Organized and detail-oriented professional ensuring smooth operations.",
   },
 ];

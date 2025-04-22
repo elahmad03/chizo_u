@@ -29,7 +29,7 @@ const Footer = () => {
   return (
     <>
       {/* Main Footer */}
-      <footer className="bg-teal-200 text-black dark:bg-cyan-900 dark:text-white py-12 px-6 sm:px-8 w-full">
+      <footer className="bg-cyan-500 text-grey m-0  my-0 py-12 px-6 sm:px-8 w-full">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left Column */}
           <div className="space-y-5">
